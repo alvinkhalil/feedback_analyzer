@@ -34,7 +34,7 @@ docker-compose up -d
 
 3. **Proyektə-yə daxil olmaq:**
 
-Proyekt `http://localhost:80` url və portunda çalışır.
+Proyekt `http://localhost:8080` url və portunda çalışır.
 
 ## Qeydlər
 
