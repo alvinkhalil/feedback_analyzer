@@ -22,7 +22,7 @@ Bu layihə, Django , MongoDB , Nginx və Docker ilə çalışan feedback analiz 
 1. **Reponu clone edin:**
 
 ```bash
-git clone https://github.com/alvinkhalil/feedback.git
+git clone https://github.com/alvinkhalil/feedback_analyzer.git
 cd feedback-analyzer
 ```
 
