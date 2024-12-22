@@ -6,29 +6,38 @@ services:
     command: gunicorn feedback_analyzer.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./backend:/app
-    ports:
-      - "8000:8000"
     depends_on:
       - mongo
+    networks:
+      - app_network  
 
   mongo:
     build: db
     container_name: mongo_db
-    ports:
-      - "27017:27017"
+
+    expose:
+      - "27017"  
     volumes:
       - mongo_data:/data/db
-      - ./db/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh  
+      - ./db/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+    networks:
+      - app_network 
 
   nginx:
     image: nginx:latest
     container_name: nginx
     ports:
-      - "80:80"
+      - "8080:8080"
     volumes:
       - ./web-server/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - django
+    networks:
+      - app_network  
 
 volumes:
   mongo_data:
+
+networks:
+  app_network: 
+    driver: bridge
