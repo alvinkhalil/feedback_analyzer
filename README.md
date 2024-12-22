@@ -11,7 +11,7 @@ Bu layihə, Django , MongoDB , Nginx və Docker ilə çalışan feedback analiz 
 - **Docker Compose** - Container-lərin kontrolu üçün
 
 
-### Lazım olan şey şüylər :))
+### Lazım olan texnologiyalar
 
 - Docker
 - Docker Compose
